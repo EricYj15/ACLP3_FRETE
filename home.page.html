@@ -1,0 +1,112 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      App logística
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+
+  <ion-item>
+    <ion-label>Insira o Peso</ion-label>
+    <ion-select interface="popover" class="custom-options" [(ngModel)]="pesoSelecionado">
+      <ion-select-option value="escolha1">0 à 20Kg</ion-select-option>
+      <ion-select-option value="escolha2">20 à 40Kg</ion-select-option>
+      <ion-select-option value="escolha3">40 à 60Kg</ion-select-option>
+      <ion-select-option value="escolha4">60 à 80Kg</ion-select-option>
+      <ion-select-option value="escolha5">80 à 100Kg</ion-select-option>
+    </ion-select>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Insira a distância</ion-label>
+    <ion-select interface="popover" class="custom-options"  [(ngModel)]="disSelecionado">
+      <ion-select-option value="opção1">0 à 20Km</ion-select-option>
+      <ion-select-option value="opção2">20 à 40Km</ion-select-option>
+      <ion-select-option value="opção3">40 à 60Km</ion-select-option>
+      <ion-select-option value="opção4">60 à 80Km</ion-select-option>
+      <ion-select-option value="opção5">80 à 100Km</ion-select-option>
+    </ion-select>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Tipo de entrega</ion-label>
+    <ion-select interface="popover" class="custom-options"  [(ngModel)]="entSelecionado">
+      <ion-select-option value="regular">Sedex</ion-select-option>
+      <ion-select-option value="expresso">Entrega rápida</ion-select-option>
+      <ion-select-option value="agendado">Agendar entrega</ion-select-option>
+    </ion-select>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Desconto de 20%</ion-label>
+    <ion-select interface="popover" class="custom-options" [multiple]="true"  [(ngModel)]="choiceSelecionado">
+      <ion-select-option value="menos40kg">Abaixo de 23kg</ion-select-option>
+      <ion-select-option value="menos40km">Cidade de SP</ion-select-option>
+    </ion-select>
+  </ion-item>
+
+  <ion-button expand="block" (click)="formula()" color="dark">Calcular preços                                                                                                                                                                                                                                                                                                                                                                      </ion-button>
+
+    <ion-input class="le" value='{{peso()}} BRL/Kg | {{distancia()}} BRL/Km | {{entrega()}} reais pela entrega' [readonly]="true"></ion-input>
+    <ion-input class="le" value='20% de desconto caso entre na promoçao' [readonly]="true"></ion-input>
+
+
+  <ion-accordion-group>
+    <ion-accordion value="first">
+      <ion-item slot="header" color="dark">
+        <ion-label>Tabela de preços</ion-label>
+      </ion-item>
+      <div class="ion-padding" slot="content">
+        <table>
+          <thead>
+            <tr>
+              <th>Peso</th>
+              <th>Preço</th>
+              <th>Distância</th>
+              <th>Preço</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>0 à 20Kg</td>
+              <td>20</td>
+              <td>0 à 20Km</td>
+              <td>10</td>
+            </tr>
+            <tr>
+              <td>20 à 40Kg</td>
+              <td>35</td>
+              <td>20 à 40Km</td>
+              <td>15</td>
+            </tr>
+            <tr>
+              <td>40 à 60Kg</td>
+              <td>70</td>
+              <td>40 à 60Km</td>
+              <td>20</td>
+            </tr>
+            <tr>
+              <td>60 à 80Kg</td>
+              <td>90</td>
+              <td>60 à 80Km</td>
+              <td>25</td>
+            </tr>
+            <tr>
+              <td>80 à 100Kg</td>
+              <td>100</td>
+              <td>80 à 100Km</td>
+              <td>30</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </ion-accordion>
+  </ion-accordion-group>
+
+<ion-input [readonly]="true" class="gal" value={{conta}} ></ion-input>
+   
+    <ion-button (click)="alert1()" (click)="formula()" class="be" color="dark" clear="fill">Pagar</ion-button>
+</ion-content>

@@ -1,0 +1,70 @@
+#container {
+  text-align: center;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+#container strong {
+  font-size: 20px;
+  line-height: 26px;
+}
+
+#container p {
+  font-size: 16px;
+  line-height: 22px;
+  color: #8c8c8c;
+  margin: 0;
+}
+
+#container a {
+  text-decoration: none;
+}
+
+ion-title {
+  text-align: center;
+}
+
+.le {
+  text-align: center;
+  color: brown;
+  font-size: 12px;
+
+}
+
+.gal {
+
+  color: brown;
+    text-align: center;
+    font-size: 30px;
+    width: 70%;
+    display: inline-block;
+  }
+
+.be {
+  display: inline-block;
+  margin: 0px;
+  margin-left: 10px;
+  width: 25%;
+}
+
+.button{
+ outline-color: black;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+}
+th, td {
+  text-align: center;
+  padding: 10px;
+  border: 1px solid #ccc;
+}
+th {
+  background-color: #f2f2f2;
+}
